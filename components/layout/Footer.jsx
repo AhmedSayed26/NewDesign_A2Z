@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, WHATSAPP_URL } from "@/lib/links";
 
 const QUICK_LINKS = [
   { key: "about", href: "/about" },
-  { key: "portfolio", href: "/portfolio" },
+  { key: "portfolio", href: "/#projects" },
   { key: "contactUs", href: "/contact" },
 ];
 
