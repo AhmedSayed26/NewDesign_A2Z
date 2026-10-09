@@ -11,7 +11,7 @@ export default function AboutHero() {
   return (
     <section
       aria-label={t("about.hero.aria")}
-      className="relative isolate flex min-h-[88svh] flex-col justify-end overflow-hidden bg-ink text-paper sm:min-h-[92svh]"
+      className="relative isolate flex flex-col justify-end overflow-hidden bg-ink text-paper lg:min-h-[92svh]"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_10%_-5%,color-mix(in_srgb,var(--main-color)_48%,transparent),transparent_55%),radial-gradient(ellipse_60%_50%_at_100%_90%,color-mix(in_srgb,var(--accent-color)_18%,transparent),transparent_50%),#141413]" />
@@ -20,14 +20,26 @@ export default function AboutHero() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-[20%] overflow-hidden sm:top-[14%]"
+        className="pointer-events-none absolute inset-x-0 top-[14%] hidden overflow-hidden lg:block"
       >
         <p className="select-none text-center text-[clamp(6rem,26vw,18rem)] font-extrabold leading-none tracking-[-0.08em] text-paper/[0.045] [font-stretch:72%]">
           A2Z
         </p>
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-40 lg:pb-24">
+      <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-40">
+        {/* Below lg the mark sits in the flow, tucked just above the eyebrow, instead of floating at the top. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none -mb-[0.2em] select-none text-[clamp(5.5rem,24vw,13rem)] leading-none lg:hidden"
+        >
+          <span
+            dir="ltr"
+            className="inline-block font-extrabold leading-none tracking-[-0.08em] text-paper/[0.07] [font-stretch:72%]"
+          >
+            A2Z
+          </span>
+        </div>
         <FadeText
           as="p"
           startOnVisible={false}

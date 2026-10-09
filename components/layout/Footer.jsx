@@ -153,7 +153,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-paper/15 bg-ink">
+      <div className="relative border-t border-paper/15 bg-ink/40">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-sm text-paper/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>{t("footer.copyright")}</p>
           <p lang={lang === "en" ? "ar" : "en"} className="text-paper/70">

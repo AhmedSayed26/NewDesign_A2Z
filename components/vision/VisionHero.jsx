@@ -86,14 +86,14 @@ export default function VisionHero() {
   return (
     <section
       aria-label={t("vision.hero.aria")}
-      className="relative isolate flex min-h-[92svh] flex-col justify-end overflow-hidden bg-ink text-paper"
+      className="relative isolate flex flex-col justify-end overflow-hidden bg-ink text-paper lg:min-h-[92svh]"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_65%_at_90%_-5%,color-mix(in_srgb,var(--main-color)_48%,transparent),transparent_55%),radial-gradient(ellipse_60%_50%_at_0%_100%,color-mix(in_srgb,var(--accent-color)_18%,transparent),transparent_52%),#141413]" />
         <div className="animate-a2z-hero-sheen absolute -bottom-1/3 -start-[15%] h-[55vmax] w-[55vmax] rounded-full bg-[radial-gradient(circle,color-mix(in_srgb,var(--main-color)_26%,transparent),transparent_68%)] blur-3xl" />
       </div>
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-end gap-14 px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-40 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16 lg:pb-24">
+      <div className="relative mx-auto grid w-full max-w-7xl items-end gap-14 px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16 lg:pb-24 lg:pt-40">
         <div>
           <FadeText
             as="p"
