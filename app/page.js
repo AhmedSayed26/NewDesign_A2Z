@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Hero from "@/components/home/Hero";
 import Ticker from "@/components/home/Ticker";
 import Clients from "@/components/home/Clients";
@@ -17,14 +18,20 @@ export default function Home() {
   return (
     <main className="flex-1">
       <Hero />
-      <Ticker />
-      <Clients />
+      <Suspense fallback={null}>
+        <Ticker />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Clients />
+      </Suspense>
       <Services />
       <Different />
       <Presence />
       <Skills />
       <Build />
-      <Projects />
+      <Suspense fallback={null}>
+        <Projects />
+      </Suspense>
     </main>
   );
 }
