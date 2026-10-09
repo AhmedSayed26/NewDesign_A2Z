@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
+/* A2Z palette. Edit colours here only; components reference these variables. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white-color: #f7f7f5;
+  --black-color: #141413;
+  --main-color: #0a5c56;
+  --accent-color: #b8953e;
+  --gray-color: #5a5956;
+  --line-color: #e3e2dd;
+  --surface-color: #efeee9;
+
+  --background: var(--white-color);
+  --foreground: var(--black-color);
+
+  /* next/font's metric fallbacks are Arial-based and include Arabic glyphs, so the
+     script-appropriate family has to come first or Arabic renders in Arial. */
+  --font-stack-sans: var(--font-archivo), var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+  --font-stack-mono: var(--font-geist-mono), var(--font-arabic), ui-monospace, monospace;
+}
+
+:root[lang="ar"] {
+  --font-stack-sans: var(--font-arabic), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-stack-mono: var(--font-arabic), var(--font-geist-mono), ui-monospace, monospace;
+}
+
+[lang="ar"]:not(html) {
+  font-family: var(--font-arabic), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-paper: var(--white-color);
+  --color-ink: var(--black-color);
+  --color-main: var(--main-color);
+  --color-accent: var(--accent-color);
+  --color-ink-soft: var(--gray-color);
+  --color-line: var(--line-color);
+  --color-surface: var(--surface-color);
+
+  --font-sans: var(--font-stack-sans);
+  --font-mono: var(--font-stack-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--main-color);
+  color: var(--white-color);
+}
+
+@keyframes a2z-scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+@keyframes a2z-hero-sheen {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(-2%, 2%, 0) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes a2z-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-a2z-spin {
+  animation: a2z-spin 40s linear infinite;
+}
+
+.animate-a2z-scroll-cue {
+  animation: a2z-scroll-cue 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.animate-a2z-hero-sheen {
+  animation: a2z-hero-sheen 16s ease-in-out infinite;
+}
+
+/* Continuous Swiper marquees (ticker + client logos) */
+.a2z-ticker .swiper-wrapper,
+.a2z-clients-rail .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.a2z-projects {
+  overflow: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-a2z-scroll-cue,
+  .animate-a2z-hero-sheen,
+  .animate-a2z-spin {
+    animation: none;
+  }
 }
