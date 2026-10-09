@@ -9,8 +9,8 @@ import Build from "@/components/home/Build";
 import Projects from "@/components/home/Projects";
 
 export const metadata = {
-  title: "A2Z",
-  description: "A2Z",
+  title: "A2Z — Media",
+  description: "A2Z Media, Production & Strategic Communication provides integrated media and marketing solutions that help companies build a strong presence and achieve real impact.",
 };
 
 export default function Home() {
