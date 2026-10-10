@@ -3,6 +3,7 @@
 import { useTranslation } from "@/components/LanguageProvider";
 import Button from "@/components/shared/Button/Button";
 import FadeText from "@/components/shared/FadeText/FadeText";
+import Link from "next/link";
 
 const LINE_DELAY = 0.14;
 
@@ -80,9 +81,11 @@ export default function Hero() {
             className="mt-9 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4"
             text={
               <>
-                <Button href="/portfolio" variant="inverse" size="lg">
+              <Link href="/#projects" >
+                <Button variant="inverse" size="lg">
                   {t("hero.seeWork")}
                 </Button>
+              </Link>
                 <Button href="/contact" variant="ghost" size="lg">
                   {t("common.letsTalk")}
                 </Button>

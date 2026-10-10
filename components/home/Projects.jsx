@@ -78,9 +78,11 @@ export default function Projects() {
                     <span aria-hidden="true">→</span>
                   </button>
                 </div>
-                <Button href="/portfolio" size="lg">
-                  {t("projects.viewAll")}
-                </Button>
+                <Link href="/#portfolio">
+                  <Button size="lg">
+                    {t("projects.viewAll")}
+                  </Button>
+                </Link>
               </>
             }
           />
